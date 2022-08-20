@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Materia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/tablero', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('materia', Materia::class)->name('materia');
 Route::get('usuarios', function(){
     return 'usuarios';
 })->name('usuario');
